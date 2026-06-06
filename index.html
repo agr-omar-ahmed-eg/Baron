@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول الصور إلى اختبارات جوجل</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        h2 { text-align: center; color: #673ab7; margin-bottom: 25px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .note { font-size: 12px; color: #777; margin-top: 5px; }
+        button {
+            width: 100%;
+            background-color: #673ab7;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #512da8; }
+        button:disabled { background-color: #b39ddb; cursor: not-allowed; }
+        #statusArea {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+            font-weight: bold;
+            word-break: break-word;
+        }
+        .success { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .error { background-color: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+        .loading { background-color: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+        a { color: #673ab7; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>📸 تحويل الصورة لاختبار ذكي</h2>
+    
+    <div class="form-group">
+        <label for="imageUpload">صورة الأسئلة الدراسية:</label>
+        <input type="file" id="imageUpload" accept="image/*">
+        <div class="note">💡 سيقوم الموقع باستخدام مفتاحك ورابط جوجل المربوطين في إعدادات Netlify تلقائياً.</div>
+    </div>
+
+    <button id="submitBtn" onclick="processImage()">بدء المعالجة والإنشاء 🚀</button>
+
+    <div id="statusArea"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
